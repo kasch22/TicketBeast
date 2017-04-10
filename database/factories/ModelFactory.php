@@ -22,3 +22,31 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Concert::class, function (Faker\Generator $faker) {
+    return [
+        'title' =>  'Example Title',
+        'subtitle' => 'Example Title',
+        'date' => \Carbon\Carbon::parse('+2 weels'),
+        'ticket_price' => 2000,
+        'venue' => 'The Example Theatre',
+        'venus_address' => '123 example lane',
+        'city' => 'City',
+        'state' => 'State',
+        'zip' => '12354',
+        'additional_information' => 'Example show information',
+    ];
+});
+
+$factory->state(App\Concert::class, 'published' ,function (Faker\Generator $faker) {
+    return [
+        'published_at' => \Carbon\Carbon::parse('-1 week'),
+    ];
+});
+
+$factory->state(App\Concert::class, 'unpublished' ,function (Faker\Generator $faker) {
+    return [
+        'published_at' => null,
+    ];
+});

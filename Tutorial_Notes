@@ -1,0 +1,6 @@
+//Section 1
+
+1. decieding what features to use
+2. building first Feature test, end to end test.
+3. running first test
+    - setting up sqlite in memory DB
