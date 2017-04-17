@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/concerts/{id}', [
     'uses' => 'ConcertsController@show'
 ]);
+
+Route::post('/concerts/{id}/orders', [
+    'uses' => 'ConcertOrdersController@store'
+]);
