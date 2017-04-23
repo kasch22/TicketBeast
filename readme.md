@@ -1,40 +1,37 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Ticket Beast
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Section 1
 
-## About Laravel
+1. Deciding what features to use
+2. Building first Feature test, end to end test.
+3. Running first test
+    - setting up sqlite in memory DB
+4. Unit testing the Concert model
+5. Refactoring Code while keeping tests passing
+6. Add more features to the Feature Test
+7. Refactoring Controller using Concert Unit testing
+8. Applying Model factory states to create more readable tests
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+> Remember to refactor test names as code develops to be more descriptive of the test as the test set builds up
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Section 2
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+1. Pros on cons of end to end browser and ened to end point Testig
+2. Setting up payment Test
+3. 
+4. Using a fake to mock a third party appliction
+5. Create ConcertOrders Controller and test driving first order create. Migrations for Orders and Tickets tables +
+relationships created
+6. Add test for json request validation and refactoring of the ConcertOrdersController
+7. Add more test for request validation. Interesting ideas for testing different validation rule replies using the
+assertArrayKey and the Json Decode method. See PurchaseTicketsTest
+8. Refactoring the PurchaseTicketsTest to be more expressive, using helper functions to wrap commonly used items
+such as the post request made. The assertions wee also encapsulated. This is a great technique for creating more
+readable test.
+9. Shows way of using try catch to assert tests past rather than using @exception notation in doc blocks of the
+test. This method allows for further assertions to be made on the exception however this is not shown in this video,
+only discussed. A custom Exception handler is created and try catch blocks added to the controller to throw new
+exception. This is then tested for.
+10. The test were updated to hand published and unpublished concerts with a test to see that unpublished concerts
+couldn't have tickets bought for them. The controller method for storing the ticket methods has been updated to
+ prioritise exceptions as several exceptions can be thrown in that controller.
